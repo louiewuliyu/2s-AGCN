@@ -7,13 +7,17 @@ train_feeder_args:
   random_choose: True
   random_move: True
   window_size: 150
-  data_path: ./data/kinetics/train_data_joint.npy
-  label_path: ./data/kinetics/train_label.pkl
+#  data_path: ./data/kinetics/train_data_joint.npy
+#  label_path: ./data/kinetics/train_label.pkl
+  data_path: /disk2/wuliyu/datasets/data/Kinetics/kinetics-skeleton/train_data.npy
+  label_path: /disk2/wuliyu/datasets/data/Kinetics/kinetics-skeleton/train_label.pkl
   debug: False
 
 test_feeder_args:
-  data_path: ./data/kinetics/val_data_joint.npy
-  label_path: ./data/kinetics/val_label.pkl
+#  data_path: ./data/kinetics/val_data_joint.npy
+#  label_path: ./data/kinetics/val_label.pkl
+  data_path: /disk2/wuliyu/datasets/data/Kinetics/kinetics-skeleton/val_data.npy
+  label_path: /disk2/wuliyu/datasets/data/Kinetics/kinetics-skeleton/val_label.pkl
 
 # model
 model: model.agcn.Model
@@ -31,9 +35,10 @@ base_lr: 0.1
 step: [45, 55]
 
 # training
-device: [0, 1, 2, 3]
-batch_size: 128
-test_batch_size: 256
+#device: [0, 1, 2, 3]
+device: [1]
+batch_size: 64 #128
+test_batch_size: 128 #256
 num_epoch: 65
 nesterov: True
 
